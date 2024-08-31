@@ -25,5 +25,5 @@ cd custom && pip install -r requirements.txt
 
 Set permission:
 ```{bash}
-chmod +x start resize weather convert
+chmod +x start resize weather convert remind
 ```
