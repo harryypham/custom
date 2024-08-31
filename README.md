@@ -4,6 +4,7 @@
 - convert
 - resize
 - weather
+- quote
 
 ## Installation
 Clone the repository:

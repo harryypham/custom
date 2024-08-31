@@ -1,0 +1,19 @@
+#!/bin/bash
+
+jq=$(which jq)
+if [ -z $jq ]
+then
+    echo "jq could not be found."
+    read -p "Would you like to install jq (with Homebrew)? (yes/no): " inp
+    if [ $inp = "yes" ]
+    then
+        brew install jq
+    else
+        exit 0
+    fi
+fi
+
+json=$(curl -s https://api.quotable.io/random)
+quote=$(echo $json | jq -r '.content')
+author=$(echo $json | jq -r '.author')
+echo \"$quote\" - $author
