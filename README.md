@@ -5,6 +5,7 @@
 - resize
 - weather
 - quote
+- remind
 
 ## Installation
 Clone the repository:
@@ -26,5 +27,5 @@ pip install -r requirements.txt
 
 Set permission:
 ```{bash}
-chmod +x start resize weather convert remind
+chmod +x start resize weather convert remind quote
 ```
