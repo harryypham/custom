@@ -40,7 +40,6 @@ done
 
 if [ $# -eq 0 ] || [ $1 = "-h" ] || [ $1 = "--help" ]
 then
-	echo "<<This is a custom command built by me>>"
 	echo "Usage: start [... apps]"
 	echo "Examples:"
 	echo "	To open Google Chrome and Obsidian: start chrome obs"
