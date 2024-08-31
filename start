@@ -1,0 +1,60 @@
+#!/bin/bash
+
+resolve()
+{
+	s=true
+	case $i in
+		"chrome") i="Google Chrome"
+		;;
+		"safari") i="Safari"
+		;;
+		"obs") i="Obsidian"
+		;;
+		"vsc") i="Visual Studio Code"
+		;;
+		"notes") i="Notes"
+		;;
+		"fd") i="Finder"
+		;;
+		*)
+		s=false
+		;;
+	esac
+}
+
+main()
+{
+for i in $@
+do 
+	resolve $i
+	if [ $s = false ]
+	then
+		echo "Cannot resolve app '$i'. Use 'start -l' to see available applications."
+	else
+		echo "Opening $i..."
+		open -a "$i"
+	fi
+done
+}
+
+
+if [ $# -eq 0 ] || [ $1 = "-h" ] || [ $1 = "--help" ]
+then
+	echo "<<This is a custom command built by me>>"
+	echo "Usage: start [... apps]"
+	echo "Examples:"
+	echo "	To open Google Chrome and Obsidian: start chrome obs"
+	echo "	To get the list of supported applications: start -l OR start --list"
+	echo "	To display help: start -h OR start --help"
+elif [ $1 = "-l" ] || [ $1 = "--list" ]
+then
+	echo "List of supported applications:"
+	echo "- chorme: Google Chrome"
+	echo "- safari: Safari"
+	echo "- obs: Obsidian"
+	echo "- vsc: Visual Studio Code"
+	echo "- fd: Finder"
+	echo "- notes: Notes"
+else
+	main $@
+fi
