@@ -14,7 +14,7 @@ def convert_jpeg_to_png(image, out):
     with Image.open(image) as img:
         img.save(out, 'PNG')
 
-def convert_heic_to_png(image, out):
+def convert_heic_to_all(image, out):
     """Convert HEIC image to PNG/JPEG image and vice versa"""
     os.execv('/opt/homebrew/bin/magick', ['magick', image, out])
 
@@ -39,7 +39,7 @@ def convert(args):
     elif ori_fmt == "jpeg" and new_fmt == "png":
         convert_jpeg_to_png(image, converted_image)
     elif (ori_fmt == "heic" and new_fmt in ("png", "jpeg")) or (ori_fmt in ("png","jpeg") and new_fmt == "heic"):
-        convert_heic_to_png(image, converted_image)
+        convert_heic_to_all(image, converted_image)
 
 
 if __name__ == '__main__':
