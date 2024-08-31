@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wget -q -O weather.html https://weather.com/en-AU/weather/today/
+python3 scripts/weather.py
+rm weather.html
