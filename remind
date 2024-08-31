@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python3 "$HOME/custom/scripts/remind.py" "$@"
