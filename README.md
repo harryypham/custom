@@ -10,6 +10,7 @@
 Clone the repository:
 ```{bash}
 git clone https://github.com/harryypham/custom-cli.git
+cd custom
 ```
 
 Add the directory to path:
@@ -20,7 +21,7 @@ source ~/.zshrc
 
 Install supporting modules:
 ```{bash}
-cd custom && pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Set permission:
